@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ПолМастер - Премиум покрытия</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: ["class"],
+      theme: {
+        container: {
+          center: true,
+          padding: "2rem",
+          screens: { "2xl": "1400px" },
+        },
+        extend: {
+          colors: {
+            border: "hsl(var(--border))",
+            input: "hsl(var(--input))",
+            ring: "hsl(var(--ring))",
+            background: "hsl(var(--background))",
+            foreground: "hsl(var(--foreground))",
+            primary: {
+              DEFAULT: "hsl(var(--primary))",
+              foreground: "hsl(var(--primary-foreground))",
+            },
+            secondary: {
+              DEFAULT: "hsl(var(--secondary))",
+              foreground: "hsl(var(--secondary-foreground))",
+            },
+            muted: {
+              DEFAULT: "hsl(var(--muted))",
+              foreground: "hsl(var(--muted-foreground))",
+            },
+            card: {
+              DEFAULT: "hsl(var(--card))",
+              foreground: "hsl(var(--card-foreground))",
+            },
+            gold: {
+              DEFAULT: "hsl(var(--gold))",
+              light: "hsl(var(--gold-light))",
+            },
+            wood: {
+              dark: "hsl(var(--wood-dark))",
+              mid: "hsl(var(--wood-mid))",
+              light: "hsl(var(--wood-light))",
+              grain: "hsl(var(--wood-grain))",
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    :root {
+      --background: 28 24% 12%;
+      --foreground: 34 32% 90%;
+      --card: 28 20% 16%;
+      --card-foreground: 34 32% 92%;
+      --primary: 31 46% 78%;
+      --primary-foreground: 25 40% 12%;
+      --secondary: 28 18% 22%;
+      --secondary-foreground: 34 32% 90%;
+      --muted: 28 14% 20%;
+      --muted-foreground: 32 18% 80%; /* Сделал приглушенный текст чуть светлее для читаемости */
+      --border: 28 16% 26%;
+      --input: 28 16% 26%;
+      --ring: 34 52% 62%;
+      --gold: 38 72% 56%;
+      --gold-light: 40 62% 72%;
+      --warm-bg: 28 22% 15%;
+      --wood-dark: 22 34% 9%;
+      --wood-mid: 25 36% 16%;
+      --wood-light: 29 34% 24%;
+      --wood-grain: 24 40% 12%;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -10;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.18)),
+        radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(146, 102, 58, 0.10), transparent 42%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0015 0.11' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0.45'/%3E%3C/filter%3E%3ClinearGradient id='walnut' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0%25' stop-color='%23160f0b'/%3E%3Cstop offset='20%25' stop-color='%2321140f'/%3E%3Cstop offset='38%25' stop-color='%23311f18'/%3E%3Cstop offset='54%25' stop-color='%23422a1f'/%3E%3Cstop offset='72%25' stop-color='%23301d16'/%3E%3Cstop offset='100%25' stop-color='%23140d0a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23walnut)'/%3E%3Crect width='1600' height='900' filter='url(%23grain)' opacity='0.16'/%3E%3Cpath d='M0 120 C220 90 310 150 520 128 C730 106 930 172 1130 142 C1345 112 1470 95 1600 118' stroke='%2363442d' stroke-opacity='0.24' stroke-width='46' fill='none'/%3E%3Cpath d='M0 255 C190 225 320 290 540 262 C775 232 930 302 1170 275 C1370 252 1490 230 1600 248' stroke='%238c633e' stroke-opacity='0.16' stroke-width='60' fill='none'/%3E%3Cpath d='M0 420 C220 390 360 450 590 430 C840 408 980 470 1210 452 C1395 438 1495 406 1600 418' stroke='%23593a24' stroke-opacity='0.20' stroke-width='54' fill='none'/%3E%3Cpath d='M0 620 C200 592 340 650 570 628 C780 608 980 670 1190 648 C1390 628 1490 602 1600 620' stroke='%23916a44' stroke-opacity='0.12' stroke-width='50' fill='none'/%3E%3Cpath d='M0 785 C220 760 350 815 600 794 C850 773 1010 825 1240 808 C1405 796 1500 772 1600 786' stroke='%23482c1a' stroke-opacity='0.20' stroke-width='42' fill='none'/%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 1;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -9;
+      pointer-events: none;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4)),
+        radial-gradient(circle at center, transparent 45%, rgba(0,0,0,0.4) 100%);
+    }
+
+    .card-premium::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.035;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .btn-wood::before {
+      content: "";
+      position: absolute;
+      inset: -50%;
+      z-index: -1;
+      opacity: 0.7;
+      transition: transform 0.7s ease-out;
+      background-image:
+        repeating-linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.025) 2%, transparent 4%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.002 0.3' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23w)'/%3E%3C/svg%3E");
+      background-size: 100% 100%, 300px 150px;
+      mix-blend-mode: soft-light;
+    }
+
+    .btn-wood::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      transition: transform 0.5s ease;
+      background: linear-gradient(105deg, transparent 18%, rgba(255,255,255,0.08) 24%, transparent 30%);
+    }
+
+    .btn-wood:hover::before {
+      transform: translateX(12px) translateY(-3px);
+    }
+
+    .btn-wood:hover::after {
+      transform: translateX(100%);
+    }
+
+    .btn-wood-outline::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      background: linear-gradient(170deg, hsl(var(--wood-light)) 0%, hsl(var(--wood-mid)) 50%, hsl(var(--wood-dark)) 100%);
+    }
+
+    .btn-wood-outline::after {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      z-index: -1;
+      opacity: 0;
+      transition: all 0.3s ease;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.002 0.3' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23w)'/%3E%3C/svg%3E");
+      background-size: 300px 150px;
+      mix-blend-mode: soft-light;
+    }
+
+    .btn-wood-outline:hover::before {
+      opacity: 1;
+    }
+
+    .btn-wood-outline:hover::after {
+      opacity: 0.65;
+      transform: translateX(10px);
+    }
+
+    .texture-overlay {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.002 0.4' numOctaves='6'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23w)'/%3E%3C/svg%3E");
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+
+  <style type="text/tailwindcss">
+    @layer base {
+      * { @apply border-border; }
+
+      body {
+        @apply text-foreground antialiased;
+        font-family: 'Inter', system-ui, sans-serif;
+        background-color: transparent;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', Georgia, serif;
+      }
+    }
+
+    @layer utilities {
+      .text-gradient {
+        @apply bg-clip-text text-transparent;
+        background-image: linear-gradient(135deg, hsl(var(--gold-light)), hsl(var(--gold)));
+      }
+
+      .bg-warm-gradient {
+        background: linear-gradient(180deg, hsl(var(--warm-bg) / 0.85) 0%, transparent 100%);
+      }
+
+      .card-premium {
+        /* Увеличили непрозрачность фона bg-card/95 и добавили рамку border-primary/20 */
+        @apply border border-primary/20 bg-card/95 shadow-md transition-all duration-500 relative overflow-hidden backdrop-blur-md;
+      }
+
+      .card-premium:hover {
+        box-shadow: 0 20px 40px -12px hsl(var(--gold) / 0.15), 0 0 0 1px hsl(var(--gold) / 0.3);
+        transform: translateY(-4px);
+      }
+
+      .divider-gold {
+        width: 80px;
+        height: 3px;
+        border-radius: 2px;
+        background: linear-gradient(90deg, transparent, hsl(var(--gold-light)), hsl(var(--gold)), hsl(var(--gold-light)), transparent);
+      }
+
+      .btn-wood {
+        /* Заменили text-primary-foreground на text-white для контраста, добавили тонкую границу */
+        @apply relative overflow-hidden text-white font-semibold border border-white/20 transition-all duration-300 z-[1];
+        background: linear-gradient(170deg, hsl(var(--wood-light)) 0%, hsl(var(--wood-mid)) 52%, hsl(var(--wood-dark)) 100%);
+      }
+
+      .btn-wood:hover {
+        @apply shadow-xl -translate-y-0.5 border-white/40;
+        box-shadow: 0 18px 30px rgba(0,0,0,0.4);
+        filter: brightness(1.15);
+      }
+
+      .btn-wood-outline {
+        /* Добавили более плотный фон и тень для читаемости */
+        @apply relative overflow-hidden bg-background/70 backdrop-blur-md border-2 border-primary/80 text-primary transition-all duration-300 z-[1];
+      }
+
+      .btn-wood-outline:hover {
+        /* Сделали текст белым при наведении */
+        @apply text-white border-primary shadow-lg -translate-y-0.5;
+        box-shadow: 0 14px 24px rgba(0,0,0,0.3);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="sticky top-0 z-50 border-b border-primary/20 bg-background/85 backdrop-blur-xl shadow-sm">
+    <div class="container mx-auto flex items-center justify-between px-4 py-4">
+      <div class="flex items-center gap-3">
+        <div class="relative flex h-10 w-10 items-center justify-center rounded-lg shadow-inner overflow-hidden border border-primary/30">
+          <div class="absolute inset-0 bg-[linear-gradient(170deg,var(--tw-gradient-stops))] from-[#5c3d28] to-[#1a110d]"></div>
+          <div class="absolute inset-0 opacity-50 mix-blend-soft-light texture-overlay"></div>
+          <i data-lucide="hammer" class="h-5 w-5 text-white relative z-10"></i>
+          <div class="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-background bg-gold z-20"></div>
+        </div>
+
+        <div>
+          <span class="text-xl font-bold tracking-tight text-primary drop-shadow-sm" style="font-family: 'Playfair Display', serif;">
+            ПолМастер
+          </span>
+          <p class="hidden text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:block font-semibold">
+            Премиум покрытия
+          </p>
+        </div>
+      </div>
+
+      <nav class="hidden items-center gap-8 text-sm font-semibold md:flex">
+        <a href="#services" class="text-foreground transition-colors hover:text-primary drop-shadow-sm">Услуги</a>
+        <a href="#advantages" class="text-foreground transition-colors hover:text-primary drop-shadow-sm">О нас</a>
+        <a href="#gallery" class="text-foreground transition-colors hover:text-primary drop-shadow-sm">Работы</a>
+        <a href="#contacts" class="text-foreground transition-colors hover:text-primary drop-shadow-sm">Контакты</a>
+      </nav>
+
+      <a href="tel:+79001234567" class="btn-wood inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm tracking-wide">
+        <i data-lucide="phone" class="h-4 w-4"></i>
+        <span class="hidden sm:inline">Позвонить</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="relative overflow-hidden bg-warm-gradient">
+    <div class="container mx-auto px-4 py-20 md:py-32">
+      <div class="mx-auto max-w-3xl text-center">
+        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-background/85 px-5 py-2 text-sm text-primary backdrop-blur-md shadow-md">
+          <i data-lucide="map-pin" class="h-3.5 w-3.5"></i>
+          <span class="font-medium">Кавказские Минеральные Воды</span>
+        </div>
+
+        <h1 class="mb-6 text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl drop-shadow-lg">
+          Искусство
+          <span class="text-gradient drop-shadow-sm">напольных покрытий</span>
+          <br />из дерева и кварц-винила
+        </h1>
+
+        <p class="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-foreground font-medium drop-shadow-md">
+          Создаём полы, которые восхищают. Укладка, реставрация и лакировка
+          с безупречным качеством и вниманием к каждой детали.
+        </p>
+
+        <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <a href="tel:+79001234567" class="btn-wood inline-flex h-14 items-center gap-2.5 rounded-lg px-8 text-base shadow-lg">
+            Бесплатная консультация
+            <i data-lucide="arrow-right" class="h-4 w-4"></i>
+          </a>
+
+          <a href="#services" class="btn-wood-outline inline-flex h-14 items-center gap-2 rounded-lg px-8 text-base font-semibold">
+            <span>Узнать больше</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="mx-auto mt-16 flex max-w-2xl flex-wrap items-center justify-center gap-8 md:mt-20 md:gap-16">
+        <div class="text-center rounded-xl bg-background/40 p-4 backdrop-blur-sm border border-white/5">
+          <div class="text-3xl font-bold text-primary md:text-4xl drop-shadow-md" style="font-family: 'Playfair Display', serif;">500+</div>
+          <div class="mt-2 text-xs font-bold uppercase tracking-widest text-foreground drop-shadow-sm">Выполненных проектов</div>
+        </div>
+
+        <div class="text-center rounded-xl bg-background/40 p-4 backdrop-blur-sm border border-white/5">
+          <div class="text-3xl font-bold text-primary md:text-4xl drop-shadow-md" style="font-family: 'Playfair Display', serif;">10+</div>
+          <div class="mt-2 text-xs font-bold uppercase tracking-widest text-foreground drop-shadow-sm">Лет опыта</div>
+        </div>
+
+        <div class="text-center rounded-xl bg-background/40 p-4 backdrop-blur-sm border border-white/5">
+          <div class="text-3xl font-bold text-primary md:text-4xl drop-shadow-md" style="font-family: 'Playfair Display', serif;">100%</div>
+          <div class="mt-2 text-xs font-bold uppercase tracking-widest text-foreground drop-shadow-sm">Гарантия качества</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pointer-events-none absolute -top-40 right-0 h-96 w-96 rounded-full bg-gold/15 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-20 left-0 h-80 w-80 rounded-full bg-primary/15 blur-3xl"></div>
+  </section>
+
+  <div class="flex justify-center py-4">
+    <div class="divider-gold"></div>
+  </div>
+
+  <section id="services" class="container mx-auto px-4 py-20 md:py-28">
+    <div class="mb-16 text-center">
+      <p class="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary drop-shadow-sm">Что мы делаем</p>
+      <h2 class="mb-4 text-3xl font-bold tracking-tight text-white drop-shadow-md md:text-4xl lg:text-5xl">Наши услуги</h2>
+      <p class="mx-auto max-w-md font-medium text-foreground drop-shadow-sm">Полный спектр профессиональных работ с напольными покрытиями</p>
+    </div>
+
+    <div class="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
+      <div class="card-premium group rounded-2xl p-8">
+        <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-background border border-primary/20 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:border-transparent">
+          <i data-lucide="hammer" class="h-7 w-7"></i>
+        </div>
+        <h3 class="mb-2 text-xl font-bold text-primary" style="font-family: 'Playfair Display', serif;">Укладка</h3>
+        <p class="mb-3 text-xs font-bold uppercase tracking-wider text-muted-foreground">Паркет · Доска · Ламинат · Кварц-винил</p>
+        <p class="text-sm font-medium leading-relaxed text-foreground">
+          Профессиональная укладка паркета, ламината, инженерной доски и кварц-виниловых покрытий с соблюдением всех технологий и стандартов качества.
+        </p>
+      </div>
+
+      <div class="card-premium group rounded-2xl p-8">
+        <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-background border border-primary/20 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:border-transparent">
+          <i data-lucide="wrench" class="h-7 w-7"></i>
+        </div>
+        <h3 class="mb-2 text-xl font-bold text-primary" style="font-family: 'Playfair Display', serif;">Реставрация</h3>
+        <p class="mb-3 text-xs font-bold uppercase tracking-wider text-muted-foreground">Циклёвка · Шлифовка · Ремонт</p>
+        <p class="text-sm font-medium leading-relaxed text-foreground">
+          Полное восстановление деревянных полов любой сложности — возвращаем вашему полу первозданный вид.
+        </p>
+      </div>
+
+      <div class="card-premium group rounded-2xl p-8">
+        <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-background border border-primary/20 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:border-transparent">
+          <i data-lucide="paintbrush" class="h-7 w-7"></i>
+        </div>
+        <h3 class="mb-2 text-xl font-bold text-primary" style="font-family: 'Playfair Display', serif;">Лакировка</h3>
+        <p class="mb-3 text-xs font-bold uppercase tracking-wider text-muted-foreground">Лак · Масло</p>
+        <p class="text-sm font-medium leading-relaxed text-foreground">
+          Нанесение защитных и декоративных покрытий для долговечности и благородного вида вашего пола.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="advantages" class="relative overflow-hidden border-y border-primary/20 bg-warm-gradient">
+    <div class="container mx-auto px-4 py-20 md:py-28">
+      <div class="mb-16 text-center">
+        <p class="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary drop-shadow-sm">Преимущества</p>
+        <h2 class="mb-4 text-3xl font-bold tracking-tight text-white drop-shadow-md md:text-4xl lg:text-5xl">Почему выбирают нас</h2>
+        <p class="mx-auto max-w-md font-medium text-foreground drop-shadow-sm">Качество и надёжность, проверенные временем</p>
+      </div>
+
+      <div class="mx-auto grid max-w-4xl gap-5 sm:grid-cols-2 lg:grid-cols-3 z-10 relative">
+        <div class="group flex items-center gap-4 rounded-xl border border-primary/20 bg-card/90 p-5 shadow-md backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:bg-card hover:shadow-xl hover:-translate-y-1">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-background border border-primary/20 text-primary transition-colors group-hover:bg-primary/20">
+            <i data-lucide="award" class="h-5 w-5"></i>
+          </div>
+          <span class="text-sm font-bold leading-snug text-foreground">Опыт работы более 10 лет</span>
+        </div>
+
+        <div class="group flex items-center gap-4 rounded-xl border border-primary/20 bg-card/90 p-5 shadow-md backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:bg-card hover:shadow-xl hover:-translate-y-1">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-background border border-primary/20 text-primary transition-colors group-hover:bg-primary/20">
+            <i data-lucide="map-pin" class="h-5 w-5"></i>
+          </div>
+          <span class="text-sm font-bold leading-snug text-foreground">Работаем по всему КМВ и на выезде</span>
+        </div>
+
+        <div class="group flex items-center gap-4 rounded-xl border border-primary/20 bg-card/90 p-5 shadow-md backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:bg-card hover:shadow-xl hover:-translate-y-1">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-background border border-primary/20 text-primary transition-colors group-hover:bg-primary/20">
+            <i data-lucide="shield" class="h-5 w-5"></i>
+          </div>
+          <span class="text-sm font-bold leading-snug text-foreground">Гарантия на все виды работ</span>
+        </div>
+
+        <div class="group flex items-center gap-4 rounded-xl border border-primary/20 bg-card/90 p-5 shadow-md backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:bg-card hover:shadow-xl hover:-translate-y-1">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-background border border-primary/20 text-primary transition-colors group-hover:bg-primary/20">
+            <i data-lucide="hammer" class="h-5 w-5"></i>
+          </div>
+          <span class="text-sm font-bold leading-snug text-foreground">Профессиональное оборудование</span>
+        </div>
+
+        <div class="group flex items-center gap-4 rounded-xl border border-primary/20 bg-card/90 p-5 shadow-md backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:bg-card hover:shadow-xl hover:-translate-y-1">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-background border border-primary/20 text-primary transition-colors group-hover:bg-primary/20">
+            <i data-lucide="star" class="h-5 w-5"></i>
+          </div>
+          <span class="text-sm font-bold leading-snug text-foreground">Индивидуальный подход</span>
+        </div>
+
+        <div class="group flex items-center gap-4 rounded-xl border border-primary/20 bg-card/90 p-5 shadow-md backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:bg-card hover:shadow-xl hover:-translate-y-1">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-background border border-primary/20 text-primary transition-colors group-hover:bg-primary/20">
+            <i data-lucide="check-circle" class="h-5 w-5"></i>
+          </div>
+          <span class="text-sm font-bold leading-snug text-foreground">Бесплатный выезд для осмотра</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pointer-events-none absolute right-0 top-1/2 h-[500px] w-[500px] -translate-y-1/2 translate-x-1/2 rounded-full bg-gold/15 blur-3xl z-0"></div>
+  </section>
+
+  <section id="gallery" class="container mx-auto px-4 py-20 md:py-28">
+    <div class="mb-10 text-center">
+      <p class="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary drop-shadow-sm">Наши работы</p>
+      <h2 class="mb-4 text-3xl font-bold tracking-tight text-white drop-shadow-md md:text-4xl lg:text-5xl">Галерея проектов</h2>
+      <p class="mx-auto max-w-md font-medium text-foreground drop-shadow-sm">Примеры нашего мастерства в укладке и реставрации</p>
+    </div>
+
+    <div class="mx-auto max-w-4xl">
+      <div class="relative w-full aspect-[4/3] sm:aspect-[16/9] overflow-hidden rounded-2xl bg-card border border-primary/20 shadow-lg mb-4 group">
+        <img id="main-gallery-img" src="https://placehold.co/1200x800/2E1B14/F3E8D8?text=Проект+1" alt="Укладка паркета" class="w-full h-full object-cover transition-opacity duration-300" />
+
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 sm:p-8">
+          <span id="main-gallery-title" class="text-xl sm:text-2xl font-bold text-white drop-shadow-md" style="font-family: 'Playfair Display', serif;">Укладка паркета</span>
+          <p id="main-gallery-loc" class="text-sm sm:text-base text-white/90 mt-1 font-medium">г. Пятигорск</p>
+        </div>
+      </div>
+
+      <div class="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/2E1B14/F3E8D8?text=Проект+1', 'Укладка паркета', 'г. Пятигорск')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-primary opacity-100 snap-center transition-all duration-300">
+          <img src="https://placehold.co/300x300/2E1B14/F3E8D8?text=1" class="w-full h-full object-cover" alt="Thumb 1" />
+        </button>
+
+        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/3A2218/F3E8D8?text=Проект+2', 'Реставрация доски', 'г. Кисловодск')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-transparent opacity-60 hover:opacity-100 snap-center transition-all duration-300">
+          <img src="https://placehold.co/300x300/3A2218/F3E8D8?text=2" class="w-full h-full object-cover" alt="Thumb 2" />
+        </button>
+
+        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/4A2B1E/F3E8D8?text=Проект+3', 'Укладка ламината', 'г. Ессентуки')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-transparent opacity-60 hover:opacity-100 snap-center transition-all duration-300">
+          <img src="https://placehold.co/300x300/4A2B1E/F3E8D8?text=3" class="w-full h-full object-cover" alt="Thumb 3" />
+        </button>
+
+        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/593527/F3E8D8?text=Проект+4', 'Покрытие лаком', 'г. Железноводск')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-transparent opacity-60 hover:opacity-100 snap-center transition-all duration-300">
+          <img src="https://placehold.co/300x300/593527/F3E8D8?text=4" class="w-full h-full object-cover" alt="Thumb 4" />
+        </button>
+
+        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/704332/F3E8D8?text=Проект+5', 'Циклёвка паркета', 'г. Минеральные Воды')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-transparent opacity-60 hover:opacity-100 snap-center transition-all duration-300">
+          <img src="https://placehold.co/300x300/704332/F3E8D8?text=5" class="w-full h-full object-cover" alt="Thumb 5" />
+        </button>
+
+        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/251610/F3E8D8?text=Проект+6', 'Художественная укладка', 'г. Пятигорск')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-transparent opacity-60 hover:opacity-100 snap-center transition-all duration-300">
+          <img src="https://placehold.co/300x300/251610/F3E8D8?text=6" class="w-full h-full object-cover" alt="Thumb 6" />
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="container mx-auto px-4 pb-20 md:pb-28">
+    <div class="mx-auto max-w-3xl text-center bg-card/60 p-8 rounded-3xl border border-primary/20 backdrop-blur-md shadow-lg">
+      <div class="mb-8 flex justify-center gap-1.5">
+        <i data-lucide="star" class="h-7 w-7 fill-gold text-gold drop-shadow-md"></i>
+        <i data-lucide="star" class="h-7 w-7 fill-gold text-gold drop-shadow-md"></i>
+        <i data-lucide="star" class="h-7 w-7 fill-gold text-gold drop-shadow-md"></i>
+        <i data-lucide="star" class="h-7 w-7 fill-gold text-gold drop-shadow-md"></i>
+        <i data-lucide="star" class="h-7 w-7 fill-gold text-gold drop-shadow-md"></i>
+      </div>
+
+      <blockquote class="mb-10 text-xl font-medium italic leading-relaxed text-white md:text-3xl drop-shadow-md" style="font-family: 'Playfair Display', serif;">
+        «Отличная работа! Уложили паркет быстро и качественно. Ребята — настоящие профессионалы своего дела. Рекомендую всем!»
+      </blockquote>
+
+      <div class="flex items-center justify-center gap-4">
+        <div class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-base font-bold text-primary-foreground shadow-md">
+          АК
+        </div>
+        <div class="text-left">
+          <p class="font-bold text-primary text-lg">Алексей К.</p>
+          <p class="text-sm font-medium text-foreground">г. Пятигорск</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container mx-auto px-4 pb-20 md:pb-28">
+    <div class="relative mx-auto max-w-4xl overflow-hidden rounded-3xl bg-primary p-10 text-center text-primary-foreground md:p-16 shadow-2xl border border-white/20">
+      <div class="pointer-events-none absolute inset-0 opacity-35 mix-blend-soft-light texture-overlay" style="background-size: cover;"></div>
+
+      <h2 class="relative mb-5 text-3xl font-bold md:text-5xl text-primary-foreground drop-shadow-sm" style="font-family: 'Playfair Display', serif;">
+        Готовы обновить ваш пол?
+      </h2>
+
+      <p class="relative mx-auto mb-10 max-w-lg text-lg text-primary-foreground/90 font-bold drop-shadow-sm">
+        Позвоните нам для бесплатной консультации и расчёта стоимости.
+        Выезд мастера для осмотра — бесплатно.
+      </p>
+
+      <a href="tel:+79001234567" class="relative inline-flex h-14 items-center gap-3 rounded-xl bg-background px-10 text-lg font-bold text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:bg-card border border-white/10">
+        <i data-lucide="phone" class="h-5 w-5 text-primary"></i>
+        +7 (900) 123-45-67
+      </a>
+    </div>
+  </section>
+
+  <section id="contacts" class="border-t border-primary/20 bg-warm-gradient">
+    <div class="container mx-auto px-4 py-20 md:py-28">
+      <div class="mb-16 text-center">
+        <p class="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary drop-shadow-sm">Свяжитесь с нами</p>
+        <h2 class="mb-4 text-3xl font-bold tracking-tight text-white drop-shadow-md md:text-4xl lg:text-5xl">Контакты</h2>
+      </div>
+
+      <div class="mx-auto grid max-w-3xl gap-6 sm:grid-cols-3">
+        <div class="group flex flex-col items-center gap-3 rounded-2xl border border-primary/20 bg-card/90 p-8 text-center shadow-md backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:bg-card hover:shadow-xl">
+          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-background border border-primary/20 shadow-sm text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+            <i data-lucide="phone" class="h-6 w-6"></i>
+          </div>
+          <span class="mt-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">Телефон</span>
+          <span class="text-sm font-semibold text-foreground"><a href="tel:+79001234567" class="transition-colors hover:text-primary">+7 (900) 123-45-67</a></span>
+        </div>
+
+        <div class="group flex flex-col items-center gap-3 rounded-2xl border border-primary/20 bg-card/90 p-8 text-center shadow-md backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:bg-card hover:shadow-xl">
+          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-background border border-primary/20 shadow-sm text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+            <i data-lucide="map-pin" class="h-6 w-6"></i>
+          </div>
+          <span class="mt-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">Регион</span>
+          <span class="text-sm font-semibold text-foreground">Кавказские<br />Минеральные Воды</span>
+        </div>
+
+        <div class="group flex flex-col items-center gap-3 rounded-2xl border border-primary/20 bg-card/90 p-8 text-center shadow-md backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:bg-card hover:shadow-xl">
+          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-background border border-primary/20 shadow-sm text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+            <i data-lucide="clock" class="h-6 w-6"></i>
+          </div>
+          <span class="mt-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">Режим работы</span>
+          <span class="text-sm font-semibold text-foreground">Вс–Чт: 9:00–19:00<br />Пт: 9:00–15:00<br />Сб: выходной</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-primary/20 bg-background/90 backdrop-blur-md shadow-inner">
+    <div class="container mx-auto flex flex-col items-center justify-between gap-4 px-4 py-8 sm:flex-row">
+      <div class="flex items-center gap-2">
+        <i data-lucide="hammer" class="h-5 w-5 text-primary"></i>
+        <span class="text-lg font-bold text-primary drop-shadow-sm" style="font-family: 'Playfair Display', serif;">ПолМастер</span>
+      </div>
+      <span class="text-xs font-medium text-foreground">© 2026 Все права защищены · Кавказские Минеральные Воды</span>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+
+    function changeGalleryImage(buttonElement, imageUrl, title, location) {
+      const mainImg = document.getElementById("main-gallery-img");
+      const mainTitle = document.getElementById("main-gallery-title");
+      const mainLoc = document.getElementById("main-gallery-loc");
+
+      mainImg.style.opacity = "0";
+
+      setTimeout(() => {
+        mainImg.src = imageUrl;
+        mainTitle.textContent = title;
+        mainLoc.textContent = location;
+        mainImg.style.opacity = "1";
+      }, 150);
+
+      const allThumbs = document.querySelectorAll(".gallery-thumb");
+      allThumbs.forEach((thumb) => {
+        thumb.classList.remove("border-primary", "opacity-100");
+        thumb.classList.add("border-transparent", "opacity-60");
+      });
+
+      buttonElement.classList.remove("border-transparent", "opacity-60");
+      buttonElement.classList.add("border-primary", "opacity-100");
+    }
+  </script>
+</body>
+</html>
