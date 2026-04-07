@@ -70,7 +70,7 @@
       --secondary: 28 18% 22%;
       --secondary-foreground: 34 32% 90%;
       --muted: 28 14% 20%;
-      --muted-foreground: 32 18% 80%; /* Сделал приглушенный текст чуть светлее для читаемости */
+      --muted-foreground: 32 18% 80%;
       --border: 28 16% 26%;
       --input: 28 16% 26%;
       --ring: 34 52% 62%;
@@ -230,7 +230,6 @@
       }
 
       .card-premium {
-        /* Увеличили непрозрачность фона bg-card/95 и добавили рамку border-primary/20 */
         @apply border border-primary/20 bg-card/95 shadow-md transition-all duration-500 relative overflow-hidden backdrop-blur-md;
       }
 
@@ -247,7 +246,6 @@
       }
 
       .btn-wood {
-        /* Заменили text-primary-foreground на text-white для контраста, добавили тонкую границу */
         @apply relative overflow-hidden text-white font-semibold border border-white/20 transition-all duration-300 z-[1];
         background: linear-gradient(170deg, hsl(var(--wood-light)) 0%, hsl(var(--wood-mid)) 52%, hsl(var(--wood-dark)) 100%);
       }
@@ -259,12 +257,10 @@
       }
 
       .btn-wood-outline {
-        /* Добавили более плотный фон и тень для читаемости */
         @apply relative overflow-hidden bg-background/70 backdrop-blur-md border-2 border-primary/80 text-primary transition-all duration-300 z-[1];
       }
 
       .btn-wood-outline:hover {
-        /* Сделали текст белым при наведении */
         @apply text-white border-primary shadow-lg -translate-y-0.5;
         box-shadow: 0 14px 24px rgba(0,0,0,0.3);
       }
@@ -300,10 +296,19 @@
         <a href="#contacts" class="text-foreground transition-colors hover:text-primary drop-shadow-sm">Контакты</a>
       </nav>
 
-      <a href="tel:+79001234567" class="btn-wood inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm tracking-wide">
-        <i data-lucide="phone" class="h-4 w-4"></i>
-        <span class="hidden sm:inline">Позвонить</span>
-      </a>
+      <div class="flex items-center gap-3">
+        <a href="https://www.instagram.com/parketmasteryug?igsh=MWdtZGZ5YXk5cGpjYg==" target="_blank" class="group flex h-10 w-10 items-center justify-center rounded-lg bg-background/50 border border-primary/20 transition-colors hover:bg-primary" title="Наш Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary group-hover:text-white">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <a href="tel:+79624366491" class="btn-wood inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm tracking-wide">
+          <i data-lucide="phone" class="h-4 w-4"></i>
+          <span class="hidden sm:inline">Позвонить</span>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -312,7 +317,7 @@
       <div class="mx-auto max-w-3xl text-center">
         <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-background/85 px-5 py-2 text-sm text-primary backdrop-blur-md shadow-md">
           <i data-lucide="map-pin" class="h-3.5 w-3.5"></i>
-          <span class="font-medium">Кавказские Минеральные Воды</span>
+          <span class="font-medium">Весь Юг России</span>
         </div>
 
         <h1 class="mb-6 text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl drop-shadow-lg">
@@ -327,7 +332,7 @@
         </p>
 
         <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a href="tel:+79001234567" class="btn-wood inline-flex h-14 items-center gap-2.5 rounded-lg px-8 text-base shadow-lg">
+          <a href="tel:+79624366491" class="btn-wood inline-flex h-14 items-center gap-2.5 rounded-lg px-8 text-base shadow-lg">
             Бесплатная консультация
             <i data-lucide="arrow-right" class="h-4 w-4"></i>
           </a>
@@ -340,7 +345,7 @@
 
       <div class="mx-auto mt-16 flex max-w-2xl flex-wrap items-center justify-center gap-8 md:mt-20 md:gap-16">
         <div class="text-center rounded-xl bg-background/40 p-4 backdrop-blur-sm border border-white/5">
-          <div class="text-3xl font-bold text-primary md:text-4xl drop-shadow-md" style="font-family: 'Playfair Display', serif;">500+</div>
+          <div class="text-3xl font-bold text-primary md:text-4xl drop-shadow-md" style="font-family: 'Playfair Display', serif;">1000+</div>
           <div class="mt-2 text-xs font-bold uppercase tracking-widest text-foreground drop-shadow-sm">Выполненных проектов</div>
         </div>
 
@@ -368,18 +373,18 @@
     <div class="mb-16 text-center">
       <p class="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary drop-shadow-sm">Что мы делаем</p>
       <h2 class="mb-4 text-3xl font-bold tracking-tight text-white drop-shadow-md md:text-4xl lg:text-5xl">Наши услуги</h2>
-      <p class="mx-auto max-w-md font-medium text-foreground drop-shadow-sm">Полный спектр профессиональных работ с напольными покрытиями</p>
+      <p class="mx-auto max-w-md font-medium text-foreground drop-shadow-sm">Полный спектр профессиональных работ с деревом и напольными покрытиями</p>
     </div>
 
-    <div class="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
+    <div class="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
       <div class="card-premium group rounded-2xl p-8">
         <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-background border border-primary/20 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:border-transparent">
           <i data-lucide="hammer" class="h-7 w-7"></i>
         </div>
         <h3 class="mb-2 text-xl font-bold text-primary" style="font-family: 'Playfair Display', serif;">Укладка</h3>
-        <p class="mb-3 text-xs font-bold uppercase tracking-wider text-muted-foreground">Паркет · Доска · Ламинат · Кварц-винил</p>
+        <p class="mb-3 text-xs font-bold uppercase tracking-wider text-muted-foreground">Паркет · Доска · Ламинат</p>
         <p class="text-sm font-medium leading-relaxed text-foreground">
-          Профессиональная укладка паркета, ламината, инженерной доски и кварц-виниловых покрытий с соблюдением всех технологий и стандартов качества.
+          Профессиональная укладка паркета, ламината, инженерной доски и кварц-виниловых покрытий по всем технологиям.
         </p>
       </div>
 
@@ -399,9 +404,20 @@
           <i data-lucide="paintbrush" class="h-7 w-7"></i>
         </div>
         <h3 class="mb-2 text-xl font-bold text-primary" style="font-family: 'Playfair Display', serif;">Лакировка</h3>
-        <p class="mb-3 text-xs font-bold uppercase tracking-wider text-muted-foreground">Лак · Масло</p>
+        <p class="mb-3 text-xs font-bold uppercase tracking-wider text-muted-foreground">Лак · Масло · Тонировка</p>
         <p class="text-sm font-medium leading-relaxed text-foreground">
           Нанесение защитных и декоративных покрытий для долговечности и благородного вида вашего пола.
+        </p>
+      </div>
+
+      <div class="card-premium group rounded-2xl p-8">
+        <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-background border border-primary/20 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:border-transparent">
+          <i data-lucide="ruler" class="h-7 w-7"></i>
+        </div>
+        <h3 class="mb-2 text-xl font-bold text-primary" style="font-family: 'Playfair Display', serif;">Лестницы</h3>
+        <p class="mb-3 text-xs font-bold uppercase tracking-wider text-muted-foreground">Массив · Обшивка · Ступени</p>
+        <p class="text-sm font-medium leading-relaxed text-foreground">
+          Изготовление, монтаж и реставрация лестниц из массива дерева, а также профессиональная обшивка металлокаркаса.
         </p>
       </div>
     </div>
@@ -427,7 +443,7 @@
           <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-background border border-primary/20 text-primary transition-colors group-hover:bg-primary/20">
             <i data-lucide="map-pin" class="h-5 w-5"></i>
           </div>
-          <span class="text-sm font-bold leading-snug text-foreground">Работаем по всему КМВ и на выезде</span>
+          <span class="text-sm font-bold leading-snug text-foreground">Работаем по всему югу России</span>
         </div>
 
         <div class="group flex items-center gap-4 rounded-xl border border-primary/20 bg-card/90 p-5 shadow-md backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:bg-card hover:shadow-xl hover:-translate-y-1">
@@ -476,60 +492,34 @@
 
         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 sm:p-8">
           <span id="main-gallery-title" class="text-xl sm:text-2xl font-bold text-white drop-shadow-md" style="font-family: 'Playfair Display', serif;">Укладка паркета</span>
-          <p id="main-gallery-loc" class="text-sm sm:text-base text-white/90 mt-1 font-medium">г. Пятигорск</p>
+          <p id="main-gallery-loc" class="text-sm sm:text-base text-white/90 mt-1 font-medium">г. Краснодар</p>
         </div>
       </div>
 
       <div class="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
-        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/2E1B14/F3E8D8?text=Проект+1', 'Укладка паркета', 'г. Пятигорск')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-primary opacity-100 snap-center transition-all duration-300">
+        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/2E1B14/F3E8D8?text=Проект+1', 'Укладка паркета', 'г. Краснодар')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-primary opacity-100 snap-center transition-all duration-300">
           <img src="https://placehold.co/300x300/2E1B14/F3E8D8?text=1" class="w-full h-full object-cover" alt="Thumb 1" />
         </button>
 
-        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/3A2218/F3E8D8?text=Проект+2', 'Реставрация доски', 'г. Кисловодск')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-transparent opacity-60 hover:opacity-100 snap-center transition-all duration-300">
+        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/3A2218/F3E8D8?text=Проект+2', 'Реставрация доски', 'г. Ростов-на-Дону')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-transparent opacity-60 hover:opacity-100 snap-center transition-all duration-300">
           <img src="https://placehold.co/300x300/3A2218/F3E8D8?text=2" class="w-full h-full object-cover" alt="Thumb 2" />
         </button>
 
-        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/4A2B1E/F3E8D8?text=Проект+3', 'Укладка ламината', 'г. Ессентуки')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-transparent opacity-60 hover:opacity-100 snap-center transition-all duration-300">
+        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/4A2B1E/F3E8D8?text=Проект+3', 'Укладка ламината', 'г. Ставрополь')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-transparent opacity-60 hover:opacity-100 snap-center transition-all duration-300">
           <img src="https://placehold.co/300x300/4A2B1E/F3E8D8?text=3" class="w-full h-full object-cover" alt="Thumb 3" />
         </button>
 
-        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/593527/F3E8D8?text=Проект+4', 'Покрытие лаком', 'г. Железноводск')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-transparent opacity-60 hover:opacity-100 snap-center transition-all duration-300">
+        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/593527/F3E8D8?text=Проект+4', 'Обшивка лестницы', 'г. Пятигорск')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-transparent opacity-60 hover:opacity-100 snap-center transition-all duration-300">
           <img src="https://placehold.co/300x300/593527/F3E8D8?text=4" class="w-full h-full object-cover" alt="Thumb 4" />
         </button>
 
-        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/704332/F3E8D8?text=Проект+5', 'Циклёвка паркета', 'г. Минеральные Воды')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-transparent opacity-60 hover:opacity-100 snap-center transition-all duration-300">
+        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/704332/F3E8D8?text=Проект+5', 'Циклёвка паркета', 'г. Сочи')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-transparent opacity-60 hover:opacity-100 snap-center transition-all duration-300">
           <img src="https://placehold.co/300x300/704332/F3E8D8?text=5" class="w-full h-full object-cover" alt="Thumb 5" />
         </button>
 
-        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/251610/F3E8D8?text=Проект+6', 'Художественная укладка', 'г. Пятигорск')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-transparent opacity-60 hover:opacity-100 snap-center transition-all duration-300">
+        <button onclick="changeGalleryImage(this, 'https://placehold.co/1200x800/251610/F3E8D8?text=Проект+6', 'Лестница из массива', 'г. Кисловодск')" class="gallery-thumb flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-transparent opacity-60 hover:opacity-100 snap-center transition-all duration-300">
           <img src="https://placehold.co/300x300/251610/F3E8D8?text=6" class="w-full h-full object-cover" alt="Thumb 6" />
         </button>
-      </div>
-    </div>
-  </section>
-
-  <section class="container mx-auto px-4 pb-20 md:pb-28">
-    <div class="mx-auto max-w-3xl text-center bg-card/60 p-8 rounded-3xl border border-primary/20 backdrop-blur-md shadow-lg">
-      <div class="mb-8 flex justify-center gap-1.5">
-        <i data-lucide="star" class="h-7 w-7 fill-gold text-gold drop-shadow-md"></i>
-        <i data-lucide="star" class="h-7 w-7 fill-gold text-gold drop-shadow-md"></i>
-        <i data-lucide="star" class="h-7 w-7 fill-gold text-gold drop-shadow-md"></i>
-        <i data-lucide="star" class="h-7 w-7 fill-gold text-gold drop-shadow-md"></i>
-        <i data-lucide="star" class="h-7 w-7 fill-gold text-gold drop-shadow-md"></i>
-      </div>
-
-      <blockquote class="mb-10 text-xl font-medium italic leading-relaxed text-white md:text-3xl drop-shadow-md" style="font-family: 'Playfair Display', serif;">
-        «Отличная работа! Уложили паркет быстро и качественно. Ребята — настоящие профессионалы своего дела. Рекомендую всем!»
-      </blockquote>
-
-      <div class="flex items-center justify-center gap-4">
-        <div class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-base font-bold text-primary-foreground shadow-md">
-          АК
-        </div>
-        <div class="text-left">
-          <p class="font-bold text-primary text-lg">Алексей К.</p>
-          <p class="text-sm font-medium text-foreground">г. Пятигорск</p>
-        </div>
       </div>
     </div>
   </section>
@@ -547,44 +537,88 @@
         Выезд мастера для осмотра — бесплатно.
       </p>
 
-      <a href="tel:+79001234567" class="relative inline-flex h-14 items-center gap-3 rounded-xl bg-background px-10 text-lg font-bold text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:bg-card border border-white/10">
-        <i data-lucide="phone" class="h-5 w-5 text-primary"></i>
-        +7 (900) 123-45-67
-      </a>
+      <div class="relative flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a href="tel:+79624366491" class="inline-flex h-16 items-center gap-3 rounded-2xl bg-background px-8 text-lg font-bold text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:bg-card border border-white/10 shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          +7 (962) 436-64-91
+        </a>
+
+        <div class="flex h-16 flex-col items-center sm:items-start justify-center rounded-2xl bg-primary-foreground/15 border border-primary-foreground/10 px-6 text-center sm:text-left backdrop-blur-md">
+          <div class="flex items-center gap-1.5 text-primary-foreground/80 mb-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5">
+              <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span class="text-[10px] font-bold uppercase tracking-widest">Режим работы</span>
+          </div>
+          <span class="text-sm font-bold text-primary-foreground drop-shadow-sm">Вс–Чт: 09:00–19:00, Пт: 09:00–15:00 Суббота - Выходной</span>
+        </div>
+      </div>
+      
     </div>
   </section>
 
   <section id="contacts" class="border-t border-primary/20 bg-warm-gradient">
     <div class="container mx-auto px-4 py-20 md:py-28">
-      <div class="mb-16 text-center">
+      <div class="mb-12 text-center">
         <p class="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary drop-shadow-sm">Свяжитесь с нами</p>
         <h2 class="mb-4 text-3xl font-bold tracking-tight text-white drop-shadow-md md:text-4xl lg:text-5xl">Контакты</h2>
       </div>
 
-      <div class="mx-auto grid max-w-3xl gap-6 sm:grid-cols-3">
-        <div class="group flex flex-col items-center gap-3 rounded-2xl border border-primary/20 bg-card/90 p-8 text-center shadow-md backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:bg-card hover:shadow-xl">
-          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-background border border-primary/20 shadow-sm text-primary transition-colors group-hover:bg-primary group-hover:text-white">
-            <i data-lucide="phone" class="h-6 w-6"></i>
+      <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-4 sm:gap-6">
+        
+        <a href="tel:+79624366491" class="group flex items-center gap-4 rounded-full border border-primary/30 bg-card/80 px-6 py-4 shadow-sm backdrop-blur-md transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white hover:shadow-md">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-background border border-primary/20 group-hover:border-white/30">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary group-hover:text-white">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
           </div>
-          <span class="mt-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">Телефон</span>
-          <span class="text-sm font-semibold text-foreground"><a href="tel:+79001234567" class="transition-colors hover:text-primary">+7 (900) 123-45-67</a></span>
+          <div class="flex flex-col items-start text-left">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-muted-foreground group-hover:text-white/80">Телефон</span>
+            <span class="text-sm sm:text-base font-semibold">+7 (962) 436-64-91</span>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/parketmasteryug?igsh=MWdtZGZ5YXk5cGpjYg==" target="_blank" class="group flex items-center gap-4 rounded-full border border-primary/30 bg-card/80 px-6 py-4 shadow-sm backdrop-blur-md transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white hover:shadow-md">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-background border border-primary/20 group-hover:border-white/30">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary group-hover:text-white">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </div>
+          <div class="flex flex-col items-start text-left">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-muted-foreground group-hover:text-white/80">Instagram</span>
+            <span class="text-sm sm:text-base font-semibold">@parketmasteryug</span>
+          </div>
+        </a>
+
+        <div class="group flex items-center gap-4 rounded-full border border-primary/30 bg-card/80 px-6 py-4 shadow-sm backdrop-blur-md transition-all hover:border-primary">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-background border border-primary/20">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div class="flex flex-col items-start text-left">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Регион</span>
+            <span class="text-sm sm:text-base font-semibold text-foreground">Весь Юг России</span>
+          </div>
         </div>
 
-        <div class="group flex flex-col items-center gap-3 rounded-2xl border border-primary/20 bg-card/90 p-8 text-center shadow-md backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:bg-card hover:shadow-xl">
-          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-background border border-primary/20 shadow-sm text-primary transition-colors group-hover:bg-primary group-hover:text-white">
-            <i data-lucide="map-pin" class="h-6 w-6"></i>
+        <div class="group flex items-center gap-4 rounded-full border border-primary/30 bg-card/80 px-6 py-4 shadow-sm backdrop-blur-md transition-all hover:border-primary">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-background border border-primary/20">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+              <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
           </div>
-          <span class="mt-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">Регион</span>
-          <span class="text-sm font-semibold text-foreground">Кавказские<br />Минеральные Воды</span>
+          <div class="flex flex-col items-start text-left">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Режим работы</span>
+            <span class="text-sm sm:text-base font-semibold text-foreground">Вс–Чт: 09:00 - 19:00, Пт: 09:00 - 15:00 Суббота - Выходной</span>
+          </div>
         </div>
 
-        <div class="group flex flex-col items-center gap-3 rounded-2xl border border-primary/20 bg-card/90 p-8 text-center shadow-md backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:bg-card hover:shadow-xl">
-          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-background border border-primary/20 shadow-sm text-primary transition-colors group-hover:bg-primary group-hover:text-white">
-            <i data-lucide="clock" class="h-6 w-6"></i>
-          </div>
-          <span class="mt-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">Режим работы</span>
-          <span class="text-sm font-semibold text-foreground">Вс–Чт: 9:00–19:00<br />Пт: 9:00–15:00<br />Сб: выходной</span>
-        </div>
       </div>
     </div>
   </section>
@@ -595,7 +629,7 @@
         <i data-lucide="hammer" class="h-5 w-5 text-primary"></i>
         <span class="text-lg font-bold text-primary drop-shadow-sm" style="font-family: 'Playfair Display', serif;">ПолМастер</span>
       </div>
-      <span class="text-xs font-medium text-foreground">© 2026 Все права защищены · Кавказские Минеральные Воды</span>
+      <span class="text-xs font-medium text-foreground">© 2026 Все права защищены · Юг России</span>
     </div>
   </footer>
 
