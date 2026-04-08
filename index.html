@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ProДЕРЕВО — циклёвка паркета, реставрация, укладка паркета и лестниц</title>
+  <title>ProПАРКЕТ — циклёвка паркета, реставрация, укладка паркета и лестниц</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,24 +15,29 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ru_RU" />
-  <meta property="og:site_name" content="ProДЕРЕВО" />
-  <meta property="og:title" content="ProДЕРЕВО — циклёвка, реставрация и укладка паркета" />
+  <meta property="og:site_name" content="ProПАРКЕТ" />
+  <meta property="og:title" content="ProПАРКЕТ — циклёвка, реставрация и укладка паркета" />
   <meta property="og:description" content="Профессиональная циклёвка паркета, реставрация деревянных полов и лестниц, укладка паркета, инженерной доски, кварц-винила и ламината." />
   <meta property="og:url" content="https://pro-derevoo.ru/" />
-  <meta property="og:image" content="https://pro-derevoo.ru/assets/gallery/work-1.jpeg" />
+  <meta property="og:image" content="https://pro-derevoo.ru/assets/seo/social-preview.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="ProПАРКЕТ — циклёвка, реставрация и укладка паркета" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ProДЕРЕВО — циклёвка, реставрация и укладка паркета" />
+  <meta name="twitter:title" content="ProПАРКЕТ — циклёвка, реставрация и укладка паркета" />
   <meta name="twitter:description" content="Премиальные работы по паркету, инженерной доске, лестницам, кварц-винилу и ламинату." />
-  <meta name="twitter:image" content="https://pro-derevoo.ru/assets/gallery/work-1.jpeg" />
+  <meta name="twitter:image" content="https://pro-derevoo.ru/assets/seo/social-preview.jpg" />
+  <meta name="twitter:image:alt" content="ProПАРКЕТ — циклёвка, реставрация и укладка паркета" />
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "ProДЕРЕВО",
+    "name": "ProПАРКЕТ",
     "url": "https://pro-derevoo.ru/",
-    "image": "https://pro-derevoo.ru/assets/gallery/work-1.jpeg",
+    "image": "https://pro-derevoo.ru/assets/seo/social-preview.jpg",
     "telephone": "+7-962-436-64-91",
     "description": "Циклёвка паркета, реставрация паркета и лестниц, укладка паркета, инженерной доски, кварц-винила и ламината.",
     "areaServed": "Юг России",
@@ -328,6 +333,104 @@
       50% { transform: translateY(-6px); }
     }
 
+
+
+    .contact-fab-wrap {
+      position: fixed;
+      right: 18px;
+      bottom: 22px;
+      z-index: 70;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .contact-fab-menu {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(10px) scale(0.96);
+      pointer-events: none;
+      transition: opacity 0.28s ease, transform 0.28s ease;
+    }
+
+    .contact-fab-wrap.open .contact-fab-menu {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .contact-fab-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(29, 20, 16, 0.92);
+      backdrop-filter: blur(12px);
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.22);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .contact-fab-link:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .contact-fab-btn {
+      width: 62px;
+      height: 62px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      background: linear-gradient(170deg, hsl(var(--wood-light)) 0%, hsl(var(--wood-mid)) 52%, hsl(var(--wood-dark)) 100%);
+      color: white;
+      box-shadow: 0 18px 34px rgba(0,0,0,0.32);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-fab-btn:hover {
+      transform: translateY(-2px) scale(1.03);
+      filter: brightness(1.08);
+    }
+
+    .contact-fab-label {
+      font-size: 13px;
+      color: hsl(var(--foreground));
+      font-weight: 700;
+    }
+
+    .contact-fab-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 65;
+      background: rgba(0,0,0,0.16);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.28s ease;
+    }
+
+    .contact-fab-backdrop.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (min-width: 768px) {
+      .contact-fab-wrap {
+        right: 28px;
+        bottom: 28px;
+      }
+    }
+
   </style>
 
   <style type="text/tailwindcss">
@@ -407,7 +510,7 @@
 
         <div>
           <span class="text-xl font-bold tracking-tight text-primary drop-shadow-sm" style="font-family: 'Playfair Display', serif;">
-            ProДЕРЕВО
+            ProПАРКЕТ
           </span>
           <p class="hidden text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:block font-semibold">
             Премиум покрытия
@@ -818,11 +921,33 @@
     </div>
   </section>
 
+
+  <div id="contact-fab-backdrop" class="contact-fab-backdrop"></div>
+  <div id="contact-fab" class="contact-fab-wrap" aria-label="Быстрые контакты">
+    <div class="contact-fab-menu">
+      <a href="https://www.instagram.com/parketmasteryug?igsh=MWdtZGZ5YXk5cGpjYg==" target="_blank" rel="noopener" class="contact-fab-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        <span>Instagram</span>
+      </a>
+      <a href="tel:+79624366491" class="contact-fab-link">
+        <i data-lucide="phone" class="h-4 w-4 text-primary"></i>
+        <span>Позвонить</span>
+      </a>
+    </div>
+    <button id="contact-fab-toggle" class="contact-fab-btn" type="button" aria-expanded="false" aria-controls="contact-fab-menu" title="Контакты">
+      <i data-lucide="message-circle-more" class="h-7 w-7"></i>
+    </button>
+  </div>
+
   <footer class="border-t border-primary/20 bg-background/90 backdrop-blur-md shadow-inner reveal">
     <div class="container mx-auto flex flex-col items-center justify-between gap-4 px-4 py-8 sm:flex-row">
       <div class="flex items-center gap-2">
         <i data-lucide="hammer" class="h-5 w-5 text-primary"></i>
-        <span class="text-lg font-bold text-primary drop-shadow-sm" style="font-family: 'Playfair Display', serif;">ProДЕРЕВО</span>
+        <span class="text-lg font-bold text-primary drop-shadow-sm" style="font-family: 'Playfair Display', serif;">ProПАРКЕТ</span>
       </div>
       <span class="text-xs font-medium text-foreground">© 2026 Все права защищены · Юг России</span>
     </div>
@@ -852,6 +977,31 @@
       buttonElement.classList.remove("border-transparent", "opacity-60");
       buttonElement.classList.add("border-primary", "opacity-100", "scale-[1.03]");
     }
+
+
+    const contactFab = document.getElementById("contact-fab");
+    const contactFabToggle = document.getElementById("contact-fab-toggle");
+    const contactFabBackdrop = document.getElementById("contact-fab-backdrop");
+
+    function setFabOpen(isOpen) {
+      contactFab.classList.toggle("open", isOpen);
+      contactFabBackdrop.classList.toggle("show", isOpen);
+      contactFabToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    }
+
+    contactFabToggle.addEventListener("click", () => {
+      setFabOpen(!contactFab.classList.contains("open"));
+    });
+
+    contactFabBackdrop.addEventListener("click", () => setFabOpen(false));
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setFabOpen(false);
+    });
+
+    contactFab.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setFabOpen(false));
+    });
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
