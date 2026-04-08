@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pro-derevoo.ru/sitemap.xml
