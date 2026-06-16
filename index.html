@@ -218,54 +218,30 @@
       </div>
     </section>
 
-    <section class="section before-after-section">
-      <div class="shell before-after-grid">
-        <div class="section-head align-left reveal">
-          <p class="kicker">До / после</p>
-          <h2>Наглядный результат реставрации</h2>
-          <p>Сравните состояние пола до обработки и после финишной отделки. Такой формат помогает быстро увидеть ценность реставрации.</p>
-        </div>
-
-        <div class="before-after reveal">
-          <div class="ba-frame" data-before-after>
-            <img src="assets/gallery/work-5.jpeg" alt="Паркет до реставрации" class="ba-img" />
-            <div class="ba-after" data-ba-after>
-              <img src="assets/gallery/work-1.jpeg" alt="Паркет после реставрации" class="ba-img" />
-            </div>
-            <div class="ba-handle" data-ba-handle><span></span></div>
-            <span class="ba-label ba-label-left">До</span>
-            <span class="ba-label ba-label-right">После</span>
-          </div>
-          <input class="ba-range" type="range" min="8" max="92" value="56" aria-label="Сравнить до и после" data-ba-range />
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery" class="section gallery-section">
+    <section id="gallery" class="section gallery-section legacy-gallery-section">
       <div class="shell">
         <div class="section-head reveal">
-          <p class="kicker">Работы</p>
-          <h2>Галерея выполненных работ</h2>
-          <p>Смотрите примеры паркета, деревянных полов и лестниц в крупном формате. Нажмите на фото, чтобы открыть его на весь экран.</p>
+          <p class="kicker">Наши работы</p>
+          <h2>Галерея проектов</h2>
+          <p>Примеры нашего мастерства в укладке, циклёвке и реставрации деревянных покрытий.</p>
         </div>
 
-        <div class="gallery-filters reveal" role="list" aria-label="Фильтр работ">
-          <button class="filter-btn is-active" type="button" data-filter="all">Все</button>
-          <button class="filter-btn" type="button" data-filter="parquet">Паркет</button>
-          <button class="filter-btn" type="button" data-filter="stairs">Лестницы</button>
-          <button class="filter-btn" type="button" data-filter="herringbone">Ёлочка</button>
-        </div>
+        <div class="legacy-gallery reveal">
+          <div class="legacy-gallery-stage">
+            <img id="main-gallery-img" src="assets/gallery/work-1.jpeg" alt="Профессиональная укладка и реставрация паркета от ProДЕРЕВО" />
+          </div>
 
-        <div class="gallery-grid">
-          <button class="gallery-card tall reveal" data-category="parquet herringbone" data-full="assets/gallery/work-1.jpeg" type="button"><img src="assets/gallery/work-1.jpeg" alt="Работа ProДЕРЕВО — паркет ёлочка" /><span>Паркет ёлочка</span></button>
-          <button class="gallery-card wide reveal" data-category="parquet" data-full="assets/gallery/work-2.jpeg" type="button"><img src="assets/gallery/work-2.jpeg" alt="Работа ProДЕРЕВО — деревянный пол" /><span>Деревянный пол</span></button>
-          <button class="gallery-card tall reveal" data-category="parquet" data-full="assets/gallery/work-3.jpeg" type="button"><img src="assets/gallery/work-3.jpeg" alt="Работа ProДЕРЕВО — просторный зал с паркетом" /><span>Просторный зал</span></button>
-          <button class="gallery-card reveal" data-category="parquet herringbone" data-full="assets/gallery/work-4.jpeg" type="button"><img src="assets/gallery/work-4.jpeg" alt="Работа ProДЕРЕВО — восстановленный паркет" /><span>Восстановление</span></button>
-          <button class="gallery-card reveal" data-category="parquet herringbone" data-full="assets/gallery/work-5.jpeg" type="button"><img src="assets/gallery/work-5.jpeg" alt="Работа ProДЕРЕВО — паркет после шлифовки" /><span>Шлифовка</span></button>
-          <button class="gallery-card wide reveal" data-category="parquet" data-full="assets/gallery/work-6.jpeg" type="button"><img src="assets/gallery/work-6.jpeg" alt="Работа ProДЕРЕВО — светлый деревянный пол" /><span>Светлый пол</span></button>
-          <button class="gallery-card reveal" data-category="parquet herringbone" data-full="assets/gallery/work-7.jpeg" type="button"><img src="assets/gallery/work-7.jpeg" alt="Работа ProДЕРЕВО — паркет в комнате" /><span>Комната</span></button>
-          <button class="gallery-card wide reveal" data-category="parquet" data-full="assets/gallery/work-8.jpeg" type="button"><img src="assets/gallery/work-8.jpeg" alt="Работа ProДЕРЕВО — большой объект с деревянным полом" /><span>Большой объект</span></button>
-          <button class="gallery-card tall reveal" data-category="stairs" data-full="assets/gallery/work-9.jpeg" type="button"><img src="assets/gallery/work-9.jpeg" alt="Работа ProДЕРЕВО — деревянная лестница" /><span>Лестница</span></button>
+          <div class="legacy-gallery-thumbs" aria-label="Миниатюры работ">
+            <button onclick="changeGalleryImage(this, 'assets/gallery/work-1.jpeg')" class="gallery-thumb is-active" type="button" aria-label="Показать работу 1"><img src="assets/gallery/work-1.jpeg" alt="Тёмный паркет ёлка после укладки" /></button>
+            <button onclick="changeGalleryImage(this, 'assets/gallery/work-2.jpeg')" class="gallery-thumb" type="button" aria-label="Показать работу 2"><img src="assets/gallery/work-2.jpeg" alt="Светлая инженерная доска в интерьере" /></button>
+            <button onclick="changeGalleryImage(this, 'assets/gallery/work-3.jpeg')" class="gallery-thumb" type="button" aria-label="Показать работу 3"><img src="assets/gallery/work-3.jpeg" alt="Деревянный пол в классическом интерьере" /></button>
+            <button onclick="changeGalleryImage(this, 'assets/gallery/work-4.jpeg')" class="gallery-thumb" type="button" aria-label="Показать работу 4"><img src="assets/gallery/work-4.jpeg" alt="Паркет французская ёлка после реставрации" /></button>
+            <button onclick="changeGalleryImage(this, 'assets/gallery/work-5.jpeg')" class="gallery-thumb" type="button" aria-label="Показать работу 5"><img src="assets/gallery/work-5.jpeg" alt="Укладка инженерной доски в комнате" /></button>
+            <button onclick="changeGalleryImage(this, 'assets/gallery/work-6.jpeg')" class="gallery-thumb" type="button" aria-label="Показать работу 6"><img src="assets/gallery/work-6.jpeg" alt="Штучный паркет после восстановления" /></button>
+            <button onclick="changeGalleryImage(this, 'assets/gallery/work-7.jpeg')" class="gallery-thumb" type="button" aria-label="Показать работу 7"><img src="assets/gallery/work-7.jpeg" alt="Модульный дубовый паркет в большом зале" /></button>
+            <button onclick="changeGalleryImage(this, 'assets/gallery/work-8.jpeg')" class="gallery-thumb" type="button" aria-label="Показать работу 8"><img src="assets/gallery/work-8.jpeg" alt="Реставрация деревянной лестницы" /></button>
+            <button onclick="changeGalleryImage(this, 'assets/gallery/work-9.jpeg')" class="gallery-thumb" type="button" aria-label="Показать работу 9"><img src="assets/gallery/work-9.jpeg" alt="Квадратный модульный паркет в интерьере" /></button>
+          </div>
         </div>
       </div>
     </section>
@@ -314,15 +290,25 @@
     </section>
   </main>
 
-  <div class="mobile-cta" aria-label="Быстрые действия">
-    <a href="tel:+79624366491">Позвонить</a>
-    <a href="https://www.instagram.com/parketmasteryug?igsh=MWdtZGZ5YXk5cGpjYg==" target="_blank" rel="noopener">Instagram</a>
-    <a href="#contacts">Расчёт</a>
-  </div>
-
-  <div class="modal" data-modal aria-hidden="true" role="dialog" aria-label="Просмотр фотографии">
-    <button class="modal-close" type="button" data-modal-close aria-label="Закрыть просмотр">×</button>
-    <img src="" alt="" data-modal-img />
+  <div id="contact-fab-backdrop" class="contact-fab-backdrop" aria-hidden="true"></div>
+  <div id="contact-fab" class="contact-fab-wrap" aria-label="Быстрые контакты">
+    <div class="contact-fab-menu" id="contact-fab-menu">
+      <a href="https://www.instagram.com/parketmasteryug?igsh=MWdtZGZ5YXk5cGpjYg==" target="_blank" rel="noopener" class="contact-fab-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.4 6.6h.01"/></svg>
+        <span>Instagram</span>
+      </a>
+      <a href="https://wa.me/79624366491" target="_blank" rel="noopener" class="contact-fab-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.8a8.4 8.4 0 0 1-12.4 7.4L4 20.3l1.1-4a8.4 8.4 0 1 1 15.4-4.5Z"/><path d="M8.8 8.6c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.2.1.4 0 .6l-.4.5c-.1.1-.2.3-.1.5.4.8 1.1 1.6 2.2 2.2.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.7.8c.2.1.4.3.4.5 0 .5-.2 1.2-.7 1.5-.7.4-2.4.2-4.2-.9-1.8-1-3.5-2.7-4.2-4.6-.5-1.2-.3-1.9.2-2.5Z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+      <a href="tel:+79624366491" class="contact-fab-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <span>Позвонить</span>
+      </a>
+    </div>
+    <button id="contact-fab-toggle" class="contact-fab-btn" type="button" aria-expanded="false" aria-controls="contact-fab-menu" title="Контакты">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+    </button>
   </div>
 
   <footer class="site-footer">
@@ -369,60 +355,39 @@
 
     document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
 
-    const ba = document.querySelector('[data-before-after]');
-    const baAfter = document.querySelector('[data-ba-after]');
-    const baHandle = document.querySelector('[data-ba-handle]');
-    const baRange = document.querySelector('[data-ba-range]');
+    function changeGalleryImage(buttonElement, imageUrl) {
+      const mainImg = document.getElementById('main-gallery-img');
+      if (!mainImg) return;
+      mainImg.style.opacity = '0';
+      mainImg.style.transform = 'scale(1.018)';
 
-    function setBeforeAfter(value) {
-      if (!baAfter || !baHandle) return;
-      baAfter.style.clipPath = `inset(0 ${100 - Number(value)}% 0 0)`;
-      baAfter.style.setProperty('--ba-value', value + '%');
-      baHandle.style.left = value + '%';
+      window.setTimeout(() => {
+        mainImg.src = imageUrl;
+        mainImg.style.opacity = '1';
+        mainImg.style.transform = 'scale(1)';
+      }, 170);
+
+      document.querySelectorAll('.gallery-thumb').forEach((thumb) => thumb.classList.remove('is-active'));
+      buttonElement.classList.add('is-active');
     }
 
-    baRange?.addEventListener('input', (event) => setBeforeAfter(event.target.value));
-    setBeforeAfter(baRange?.value || 56);
+    const contactFab = document.getElementById('contact-fab');
+    const contactFabToggle = document.getElementById('contact-fab-toggle');
+    const contactFabBackdrop = document.getElementById('contact-fab-backdrop');
 
-    document.querySelectorAll('[data-filter]').forEach((button) => {
-      button.addEventListener('click', () => {
-        const filter = button.dataset.filter;
-        document.querySelectorAll('[data-filter]').forEach((item) => item.classList.remove('is-active'));
-        button.classList.add('is-active');
-        document.querySelectorAll('.gallery-card').forEach((card) => {
-          const visible = filter === 'all' || card.dataset.category.includes(filter);
-          card.toggleAttribute('hidden', !visible);
-        });
-      });
-    });
-
-    const modal = document.querySelector('[data-modal]');
-    const modalImg = document.querySelector('[data-modal-img]');
-    const modalClose = document.querySelector('[data-modal-close]');
-
-    document.querySelectorAll('.gallery-card').forEach((card) => {
-      card.addEventListener('click', () => {
-        modalImg.src = card.dataset.full;
-        modalImg.alt = card.querySelector('img').alt;
-        modal.classList.add('is-open');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('modal-open');
-      });
-    });
-
-    function closeModal() {
-      modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('modal-open');
-      setTimeout(() => { modalImg.src = ''; }, 180);
+    function setFabOpen(isOpen) {
+      if (!contactFab || !contactFabToggle || !contactFabBackdrop) return;
+      contactFab.classList.toggle('open', isOpen);
+      contactFabBackdrop.classList.toggle('show', isOpen);
+      contactFabToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     }
 
-    modalClose?.addEventListener('click', closeModal);
-    modal?.addEventListener('click', (event) => {
-      if (event.target === modal) closeModal();
-    });
+    contactFabToggle?.addEventListener('click', () => setFabOpen(!contactFab.classList.contains('open')));
+    contactFabBackdrop?.addEventListener('click', () => setFabOpen(false));
+    contactFab?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setFabOpen(false)));
+
     window.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+      if (event.key === 'Escape') setFabOpen(false);
     });
 
     const year = document.querySelector('[data-year]');
