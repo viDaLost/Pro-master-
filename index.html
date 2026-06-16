@@ -218,29 +218,29 @@
       </div>
     </section>
 
-    <section id="gallery" class="section gallery-section legacy-gallery-section">
+    <section id="gallery" class="section legacy-gallery-section">
       <div class="shell">
         <div class="section-head reveal">
           <p class="kicker">Наши работы</p>
           <h2>Галерея проектов</h2>
-          <p>Примеры нашего мастерства в укладке, циклёвке и реставрации деревянных покрытий.</p>
+          <p>Примеры нашего мастерства в укладке, циклёвке и реставрации деревянных покрытий. Выберите миниатюру — фотография откроется в большом формате.</p>
         </div>
 
-        <div class="legacy-gallery reveal">
-          <div class="legacy-gallery-stage">
+        <div class="legacy-gallery reveal" aria-label="Галерея работ ProДЕРЕВО">
+          <button class="legacy-gallery-stage" type="button" data-gallery-open aria-label="Открыть выбранную фотографию на весь экран">
             <img id="main-gallery-img" src="assets/gallery/work-1.jpeg" alt="Профессиональная укладка и реставрация паркета от ProДЕРЕВО" />
-          </div>
+          </button>
 
           <div class="legacy-gallery-thumbs" aria-label="Миниатюры работ">
-            <button onclick="changeGalleryImage(this, 'assets/gallery/work-1.jpeg')" class="gallery-thumb is-active" type="button" aria-label="Показать работу 1"><img src="assets/gallery/work-1.jpeg" alt="Тёмный паркет ёлка после укладки" /></button>
-            <button onclick="changeGalleryImage(this, 'assets/gallery/work-2.jpeg')" class="gallery-thumb" type="button" aria-label="Показать работу 2"><img src="assets/gallery/work-2.jpeg" alt="Светлая инженерная доска в интерьере" /></button>
-            <button onclick="changeGalleryImage(this, 'assets/gallery/work-3.jpeg')" class="gallery-thumb" type="button" aria-label="Показать работу 3"><img src="assets/gallery/work-3.jpeg" alt="Деревянный пол в классическом интерьере" /></button>
-            <button onclick="changeGalleryImage(this, 'assets/gallery/work-4.jpeg')" class="gallery-thumb" type="button" aria-label="Показать работу 4"><img src="assets/gallery/work-4.jpeg" alt="Паркет французская ёлка после реставрации" /></button>
-            <button onclick="changeGalleryImage(this, 'assets/gallery/work-5.jpeg')" class="gallery-thumb" type="button" aria-label="Показать работу 5"><img src="assets/gallery/work-5.jpeg" alt="Укладка инженерной доски в комнате" /></button>
-            <button onclick="changeGalleryImage(this, 'assets/gallery/work-6.jpeg')" class="gallery-thumb" type="button" aria-label="Показать работу 6"><img src="assets/gallery/work-6.jpeg" alt="Штучный паркет после восстановления" /></button>
-            <button onclick="changeGalleryImage(this, 'assets/gallery/work-7.jpeg')" class="gallery-thumb" type="button" aria-label="Показать работу 7"><img src="assets/gallery/work-7.jpeg" alt="Модульный дубовый паркет в большом зале" /></button>
-            <button onclick="changeGalleryImage(this, 'assets/gallery/work-8.jpeg')" class="gallery-thumb" type="button" aria-label="Показать работу 8"><img src="assets/gallery/work-8.jpeg" alt="Реставрация деревянной лестницы" /></button>
-            <button onclick="changeGalleryImage(this, 'assets/gallery/work-9.jpeg')" class="gallery-thumb" type="button" aria-label="Показать работу 9"><img src="assets/gallery/work-9.jpeg" alt="Квадратный модульный паркет в интерьере" /></button>
+            <button data-gallery-thumb data-src="assets/gallery/work-1.jpeg" class="legacy-gallery-thumb is-active" type="button" aria-label="Открыть фото 1"><img src="assets/gallery/work-1.jpeg" alt="Тёмный паркет ёлка после укладки" /></button>
+            <button data-gallery-thumb data-src="assets/gallery/work-2.jpeg" class="legacy-gallery-thumb" type="button" aria-label="Открыть фото 2"><img src="assets/gallery/work-2.jpeg" alt="Светлая инженерная доска в интерьере" /></button>
+            <button data-gallery-thumb data-src="assets/gallery/work-3.jpeg" class="legacy-gallery-thumb" type="button" aria-label="Открыть фото 3"><img src="assets/gallery/work-3.jpeg" alt="Деревянный пол в классическом интерьере" /></button>
+            <button data-gallery-thumb data-src="assets/gallery/work-4.jpeg" class="legacy-gallery-thumb" type="button" aria-label="Открыть фото 4"><img src="assets/gallery/work-4.jpeg" alt="Паркет французская ёлка после реставрации" /></button>
+            <button data-gallery-thumb data-src="assets/gallery/work-5.jpeg" class="legacy-gallery-thumb" type="button" aria-label="Открыть фото 5"><img src="assets/gallery/work-5.jpeg" alt="Укладка инженерной доски в комнате" /></button>
+            <button data-gallery-thumb data-src="assets/gallery/work-6.jpeg" class="legacy-gallery-thumb" type="button" aria-label="Открыть фото 6"><img src="assets/gallery/work-6.jpeg" alt="Штучный паркет после восстановления" /></button>
+            <button data-gallery-thumb data-src="assets/gallery/work-7.jpeg" class="legacy-gallery-thumb" type="button" aria-label="Открыть фото 7"><img src="assets/gallery/work-7.jpeg" alt="Модульный дубовый паркет в большом зале" /></button>
+            <button data-gallery-thumb data-src="assets/gallery/work-8.jpeg" class="legacy-gallery-thumb" type="button" aria-label="Открыть фото 8"><img src="assets/gallery/work-8.jpeg" alt="Реставрация деревянной лестницы" /></button>
+            <button data-gallery-thumb data-src="assets/gallery/work-9.jpeg" class="legacy-gallery-thumb" type="button" aria-label="Открыть фото 9"><img src="assets/gallery/work-9.jpeg" alt="Квадратный модульный паркет в интерьере" /></button>
           </div>
         </div>
       </div>
@@ -289,26 +289,30 @@
       </div>
     </section>
   </main>
-
   <div id="contact-fab-backdrop" class="contact-fab-backdrop" aria-hidden="true"></div>
   <div id="contact-fab" class="contact-fab-wrap" aria-label="Быстрые контакты">
-    <div class="contact-fab-menu" id="contact-fab-menu">
-      <a href="https://www.instagram.com/parketmasteryug?igsh=MWdtZGZ5YXk5cGpjYg==" target="_blank" rel="noopener" class="contact-fab-link">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.4 6.6h.01"/></svg>
+    <div id="contact-fab-menu" class="contact-fab-menu">
+      <a href="https://www.instagram.com/parketmasteryug?igsh=MWdtZGZ5YXk5cGpjYg==" target="_blank" rel="noopener" class="contact-fab-link" aria-label="Открыть Instagram ProДЕРЕВО">
+        <svg class="contact-fab-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#e8c16b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.4 6.6h.01"></path></svg>
         <span>Instagram</span>
       </a>
-      <a href="https://wa.me/79624366491" target="_blank" rel="noopener" class="contact-fab-link">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.8a8.4 8.4 0 0 1-12.4 7.4L4 20.3l1.1-4a8.4 8.4 0 1 1 15.4-4.5Z"/><path d="M8.8 8.6c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.2.1.4 0 .6l-.4.5c-.1.1-.2.3-.1.5.4.8 1.1 1.6 2.2 2.2.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.7.8c.2.1.4.3.4.5 0 .5-.2 1.2-.7 1.5-.7.4-2.4.2-4.2-.9-1.8-1-3.5-2.7-4.2-4.6-.5-1.2-.3-1.9.2-2.5Z"/></svg>
+      <a href="https://wa.me/79624366491" target="_blank" rel="noopener" class="contact-fab-link" aria-label="Написать в WhatsApp">
+        <svg class="contact-fab-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#e8c16b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.8a8.4 8.4 0 0 1-12.4 7.4L4 20.3l1.1-4a8.4 8.4 0 1 1 15.4-4.5Z"></path><path d="M9.3 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.4.5c-.1.2-.2.3-.1.5.4.8 1.1 1.6 2.1 2.1.2.1.3 0 .5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.4.6 0 .7-.5 1.5-1.1 1.7-.7.3-2.2.1-3.8-1.1-1.6-1.1-3-2.8-3.4-4.1-.3-.9 0-1.7.3-2.2Z"></path></svg>
         <span>WhatsApp</span>
       </a>
-      <a href="tel:+79624366491" class="contact-fab-link">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+      <a href="tel:+79624366491" class="contact-fab-link" aria-label="Позвонить ProДЕРЕВО">
+        <svg class="contact-fab-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#e8c16b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"></path></svg>
         <span>Позвонить</span>
       </a>
     </div>
     <button id="contact-fab-toggle" class="contact-fab-btn" type="button" aria-expanded="false" aria-controls="contact-fab-menu" title="Контакты">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+      <svg class="contact-fab-icon" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#23150e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"></path></svg>
     </button>
+  </div>
+
+  <div class="modal" data-modal aria-hidden="true" role="dialog" aria-label="Просмотр фотографии">
+    <button class="modal-close" type="button" data-modal-close aria-label="Закрыть просмотр">×</button>
+    <img src="" alt="" data-modal-img />
   </div>
 
   <footer class="site-footer">
@@ -355,39 +359,74 @@
 
     document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
 
-    function changeGalleryImage(buttonElement, imageUrl) {
-      const mainImg = document.getElementById('main-gallery-img');
-      if (!mainImg) return;
-      mainImg.style.opacity = '0';
-      mainImg.style.transform = 'scale(1.018)';
+    const modal = document.querySelector('[data-modal]');
+    const modalImg = document.querySelector('[data-modal-img]');
+    const modalClose = document.querySelector('[data-modal-close]');
+    const mainGalleryImg = document.getElementById('main-gallery-img');
+    const galleryStage = document.querySelector('[data-gallery-open]');
 
+    function changeGalleryImage(button, src) {
+      if (!mainGalleryImg || !src) return;
+      mainGalleryImg.style.opacity = '0';
       window.setTimeout(() => {
-        mainImg.src = imageUrl;
-        mainImg.style.opacity = '1';
-        mainImg.style.transform = 'scale(1)';
-      }, 170);
-
-      document.querySelectorAll('.gallery-thumb').forEach((thumb) => thumb.classList.remove('is-active'));
-      buttonElement.classList.add('is-active');
+        mainGalleryImg.src = src;
+        const thumbImg = button?.querySelector('img');
+        if (thumbImg?.alt) mainGalleryImg.alt = thumbImg.alt;
+        mainGalleryImg.style.opacity = '1';
+      }, 140);
+      document.querySelectorAll('[data-gallery-thumb]').forEach((thumb) => thumb.classList.remove('is-active'));
+      button?.classList.add('is-active');
     }
+
+    window.changeGalleryImage = changeGalleryImage;
+
+    document.querySelectorAll('[data-gallery-thumb]').forEach((button) => {
+      button.addEventListener('click', () => changeGalleryImage(button, button.dataset.src));
+    });
+
+    function openModal(src, alt) {
+      if (!modal || !modalImg || !src) return;
+      modalImg.src = src;
+      modalImg.alt = alt || '';
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+    }
+
+    galleryStage?.addEventListener('click', () => openModal(mainGalleryImg?.src, mainGalleryImg?.alt));
+
+    function closeModal() {
+      if (!modal || !modalImg) return;
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      setTimeout(() => { modalImg.src = ''; }, 180);
+    }
+
+    modalClose?.addEventListener('click', closeModal);
+    modal?.addEventListener('click', (event) => {
+      if (event.target === modal) closeModal();
+    });
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal?.classList.contains('is-open')) closeModal();
+    });
 
     const contactFab = document.getElementById('contact-fab');
     const contactFabToggle = document.getElementById('contact-fab-toggle');
     const contactFabBackdrop = document.getElementById('contact-fab-backdrop');
 
     function setFabOpen(isOpen) {
-      if (!contactFab || !contactFabToggle || !contactFabBackdrop) return;
-      contactFab.classList.toggle('open', isOpen);
-      contactFabBackdrop.classList.toggle('show', isOpen);
-      contactFabToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      contactFab?.classList.toggle('open', isOpen);
+      contactFabBackdrop?.classList.toggle('show', isOpen);
+      contactFabToggle?.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     }
 
-    contactFabToggle?.addEventListener('click', () => setFabOpen(!contactFab.classList.contains('open')));
+    contactFabToggle?.addEventListener('click', () => {
+      setFabOpen(!contactFab?.classList.contains('open'));
+    });
     contactFabBackdrop?.addEventListener('click', () => setFabOpen(false));
-    contactFab?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setFabOpen(false)));
-
-    window.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') setFabOpen(false);
+    contactFab?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setFabOpen(false));
     });
 
     const year = document.querySelector('[data-year]');
