@@ -104,13 +104,10 @@
           <div class="eyebrow"><span></span> Весь Юг России · бесплатный выезд мастера</div>
           <h1 id="hero-title">Паркет, который выглядит дорого через годы</h1>
           <p class="hero-text">Циклёвка, реставрация, укладка и финишная защита деревянных полов. Работаем аккуратно, технологично и с вниманием к деталям — от первого осмотра до финальной приёмки.</p>
-          <!-- Добавили информацию о минимальной цене как ключевой оффер -->
-          <p class="hero-price">Цена от&nbsp;1500&nbsp;₽/м²</p>
 
           <div class="hero-actions">
-            <!-- CTA обновлены: предложить расчёт и просмотр проектов -->
-            <a class="btn btn-gold" href="#contacts">Запросить смету</a>
-            <a class="btn btn-ghost" href="#gallery">Посмотреть проекты</a>
+            <a class="btn btn-gold" href="tel:+79624366491">Бесплатная консультация</a>
+            <a class="btn btn-ghost" href="#gallery">Посмотреть работы</a>
           </div>
 
           <div class="hero-stats" aria-label="Ключевые показатели">
@@ -221,31 +218,6 @@
       </div>
     </section>
 
-    <!-- Раздел с отзывами клиентов -->
-    <section id="testimonials" class="section testimonials-section">
-      <div class="shell">
-        <div class="section-head reveal">
-          <p class="kicker">Доверие клиентов</p>
-          <h2>Отзывы о нашей работе</h2>
-          <p>Реальные истории показывают, как мы превращаем старый пол в произведение искусства. Прочитайте, что говорят наши клиенты.</p>
-        </div>
-        <div class="testimonial-grid">
-          <article class="testimonial-card reveal">
-            <p class="testimonial-text">«После работы ProДЕРЕВО наш паркет выглядит как новый. Всё сделали аккуратно и вовремя — рекомендую всем!»</p>
-            <span class="testimonial-author">Анна, Ростов-на-Дону</span>
-          </article>
-          <article class="testimonial-card reveal">
-            <p class="testimonial-text">«Сначала сомневался, но команда показала профессионализм. Цена прозрачная, качество высочайшее. Спасибо за прекрасный пол!»</p>
-            <span class="testimonial-author">Иван, Краснодар</span>
-          </article>
-          <article class="testimonial-card reveal">
-            <p class="testimonial-text">«Лучшие мастера! Быстро выехали, проконсультировали и сделали реставрацию. Теперь пол — гордость нашего дома».</p>
-            <span class="testimonial-author">Мария, Сочи</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section id="gallery" class="section legacy-gallery-section">
       <div class="shell">
         <div class="section-head reveal">
@@ -254,35 +226,22 @@
           <p>Примеры нашего мастерства в укладке, циклёвке и реставрации деревянных покрытий. Выберите миниатюру — фотография откроется в большом формате.</p>
         </div>
 
-        <div class="gallery-grid reveal" aria-label="Галерея работ ProДЕРЕВО">
-          <!-- Сетка Masonry: каждая карточка — кнопка, открывающая изображение в модальном окне -->
-          <button class="gallery-item" data-img="assets/gallery/work-1.jpeg" type="button" aria-label="Открыть фото 1">
-            <img src="assets/gallery/work-1.jpeg" alt="Тёмный паркет ёлка после укладки" loading="lazy" />
+        <div class="legacy-gallery reveal" aria-label="Галерея работ ProДЕРЕВО">
+          <button class="legacy-gallery-stage" type="button" data-gallery-open aria-label="Открыть выбранную фотографию на весь экран">
+            <img id="main-gallery-img" src="assets/gallery/work-1.jpeg" alt="Профессиональная укладка и реставрация паркета от ProДЕРЕВО" />
           </button>
-          <button class="gallery-item" data-img="assets/gallery/work-2.jpeg" type="button" aria-label="Открыть фото 2">
-            <img src="assets/gallery/work-2.jpeg" alt="Светлая инженерная доска в интерьере" loading="lazy" />
-          </button>
-          <button class="gallery-item" data-img="assets/gallery/work-3.jpeg" type="button" aria-label="Открыть фото 3">
-            <img src="assets/gallery/work-3.jpeg" alt="Деревянный пол в классическом интерьере" loading="lazy" />
-          </button>
-          <button class="gallery-item" data-img="assets/gallery/work-4.jpeg" type="button" aria-label="Открыть фото 4">
-            <img src="assets/gallery/work-4.jpeg" alt="Паркет французская ёлка после реставрации" loading="lazy" />
-          </button>
-          <button class="gallery-item" data-img="assets/gallery/work-5.jpeg" type="button" aria-label="Открыть фото 5">
-            <img src="assets/gallery/work-5.jpeg" alt="Укладка инженерной доски в комнате" loading="lazy" />
-          </button>
-          <button class="gallery-item" data-img="assets/gallery/work-6.jpeg" type="button" aria-label="Открыть фото 6">
-            <img src="assets/gallery/work-6.jpeg" alt="Штучный паркет после восстановления" loading="lazy" />
-          </button>
-          <button class="gallery-item" data-img="assets/gallery/work-7.jpeg" type="button" aria-label="Открыть фото 7">
-            <img src="assets/gallery/work-7.jpeg" alt="Модульный дубовый паркет в большом зале" loading="lazy" />
-          </button>
-          <button class="gallery-item" data-img="assets/gallery/work-8.jpeg" type="button" aria-label="Открыть фото 8">
-            <img src="assets/gallery/work-8.jpeg" alt="Реставрация деревянной лестницы" loading="lazy" />
-          </button>
-          <button class="gallery-item" data-img="assets/gallery/work-9.jpeg" type="button" aria-label="Открыть фото 9">
-            <img src="assets/gallery/work-9.jpeg" alt="Квадратный модульный паркет в интерьере" loading="lazy" />
-          </button>
+
+          <div class="legacy-gallery-thumbs" aria-label="Миниатюры работ">
+            <button data-gallery-thumb data-src="assets/gallery/work-1.jpeg" class="legacy-gallery-thumb is-active" type="button" aria-label="Открыть фото 1"><img src="assets/gallery/work-1.jpeg" alt="Тёмный паркет ёлка после укладки" /></button>
+            <button data-gallery-thumb data-src="assets/gallery/work-2.jpeg" class="legacy-gallery-thumb" type="button" aria-label="Открыть фото 2"><img src="assets/gallery/work-2.jpeg" alt="Светлая инженерная доска в интерьере" /></button>
+            <button data-gallery-thumb data-src="assets/gallery/work-3.jpeg" class="legacy-gallery-thumb" type="button" aria-label="Открыть фото 3"><img src="assets/gallery/work-3.jpeg" alt="Деревянный пол в классическом интерьере" /></button>
+            <button data-gallery-thumb data-src="assets/gallery/work-4.jpeg" class="legacy-gallery-thumb" type="button" aria-label="Открыть фото 4"><img src="assets/gallery/work-4.jpeg" alt="Паркет французская ёлка после реставрации" /></button>
+            <button data-gallery-thumb data-src="assets/gallery/work-5.jpeg" class="legacy-gallery-thumb" type="button" aria-label="Открыть фото 5"><img src="assets/gallery/work-5.jpeg" alt="Укладка инженерной доски в комнате" /></button>
+            <button data-gallery-thumb data-src="assets/gallery/work-6.jpeg" class="legacy-gallery-thumb" type="button" aria-label="Открыть фото 6"><img src="assets/gallery/work-6.jpeg" alt="Штучный паркет после восстановления" /></button>
+            <button data-gallery-thumb data-src="assets/gallery/work-7.jpeg" class="legacy-gallery-thumb" type="button" aria-label="Открыть фото 7"><img src="assets/gallery/work-7.jpeg" alt="Модульный дубовый паркет в большом зале" /></button>
+            <button data-gallery-thumb data-src="assets/gallery/work-8.jpeg" class="legacy-gallery-thumb" type="button" aria-label="Открыть фото 8"><img src="assets/gallery/work-8.jpeg" alt="Реставрация деревянной лестницы" /></button>
+            <button data-gallery-thumb data-src="assets/gallery/work-9.jpeg" class="legacy-gallery-thumb" type="button" aria-label="Открыть фото 9"><img src="assets/gallery/work-9.jpeg" alt="Квадратный модульный паркет в интерьере" /></button>
+          </div>
         </div>
       </div>
     </section>
@@ -316,36 +275,16 @@
 
     <section id="contacts" class="section contacts-section">
       <div class="shell contacts-panel reveal">
-        <div class="contacts-info">
+        <div>
           <p class="kicker">Свяжитесь с нами</p>
           <h2>Получите консультацию по вашему полу</h2>
-          <p>Опишите объект, отправьте фото пола или лестницы — мы подскажем подходящую технологию и ориентировочную стоимость работ.</p>
+          <p>Опишите объект, отправьте фото пола или лестницы — подскажем возможную технологию и ориентир по работам.</p>
         </div>
-        <div>
-          <!-- Карты контактов остаются доступными для быстрой связи -->
-          <div class="contact-cards">
-            <a href="tel:+79624366491" class="contact-card"><span>Телефон</span><strong>+7 (962) 436‑64‑91</strong></a>
-            <a href="https://www.instagram.com/parketmasteryug?igsh=MWdtZGZ5YXk5cGpjYg==" target="_blank" rel="noopener" class="contact-card"><span>Instagram</span><strong>@parketmasteryug</strong></a>
-            <div class="contact-card"><span>Регион</span><strong>Весь Юг России</strong></div>
-            <div class="contact-card"><span>Режим работы</span><strong>Вс–Чт 09:00–19:00 · Пт 09:00–15:00</strong></div>
-          </div>
-          <!-- Новая форма заявки с лаконичными полями и микро‑копией -->
-          <form id="contactForm" class="contact-form" action="#" novalidate>
-            <div class="form-group">
-              <label for="name">Ваше имя</label>
-              <input type="text" id="name" name="name" placeholder="Как вас зовут?" required autocomplete="name" />
-            </div>
-            <div class="form-group">
-              <label for="phone">Телефон</label>
-              <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___‑__‑__" required autocomplete="tel" />
-            </div>
-            <div class="form-group">
-              <label for="message">Описание работ</label>
-              <textarea id="message" name="message" placeholder="Опишите состояние пола, материал или задайте вопрос"></textarea>
-            </div>
-            <button type="submit" class="btn btn-gold">Отправить заявку</button>
-            <p class="form-note">Нажимая кнопку, вы соглашаетесь с обработкой данных. <strong>Минимальная цена 1500 ₽/м²</strong></p>
-          </form>
+        <div class="contact-cards">
+          <a href="tel:+79624366491" class="contact-card"><span>Телефон</span><strong>+7 (962) 436-64-91</strong></a>
+          <a href="https://www.instagram.com/parketmasteryug?igsh=MWdtZGZ5YXk5cGpjYg==" target="_blank" rel="noopener" class="contact-card"><span>Instagram</span><strong>@parketmasteryug</strong></a>
+          <div class="contact-card"><span>Регион</span><strong>Весь Юг России</strong></div>
+          <div class="contact-card"><span>Режим работы</span><strong>Вс–Чт 09:00–19:00 · Пт 09:00–15:00</strong></div>
         </div>
       </div>
     </section>
@@ -423,11 +362,28 @@
     const modal = document.querySelector('[data-modal]');
     const modalImg = document.querySelector('[data-modal-img]');
     const modalClose = document.querySelector('[data-modal-close]');
+    const mainGalleryImg = document.getElementById('main-gallery-img');
+    const galleryStage = document.querySelector('[data-gallery-open]');
 
-    /**
-     * Открывает изображение в модальном окне.  Принимает путь к картинке и alt
-     * текст для доступности.  Изображение загружается на лету.
-     */
+    function changeGalleryImage(button, src) {
+      if (!mainGalleryImg || !src) return;
+      mainGalleryImg.style.opacity = '0';
+      window.setTimeout(() => {
+        mainGalleryImg.src = src;
+        const thumbImg = button?.querySelector('img');
+        if (thumbImg?.alt) mainGalleryImg.alt = thumbImg.alt;
+        mainGalleryImg.style.opacity = '1';
+      }, 140);
+      document.querySelectorAll('[data-gallery-thumb]').forEach((thumb) => thumb.classList.remove('is-active'));
+      button?.classList.add('is-active');
+    }
+
+    window.changeGalleryImage = changeGalleryImage;
+
+    document.querySelectorAll('[data-gallery-thumb]').forEach((button) => {
+      button.addEventListener('click', () => changeGalleryImage(button, button.dataset.src));
+    });
+
     function openModal(src, alt) {
       if (!modal || !modalImg || !src) return;
       modalImg.src = src;
@@ -437,10 +393,8 @@
       document.body.classList.add('modal-open');
     }
 
-    /**
-     * Закрывает модальное окно и очищает src.  При закрытии восстанавливает
-     * прокрутку страницы.
-     */
+    galleryStage?.addEventListener('click', () => openModal(mainGalleryImg?.src, mainGalleryImg?.alt));
+
     function closeModal() {
       if (!modal || !modalImg) return;
       modal.classList.remove('is-open');
@@ -449,17 +403,6 @@
       setTimeout(() => { modalImg.src = ''; }, 180);
     }
 
-    // Подключаем обработчики к каждому элементу галереи.  По клику
-    // открываем модальное окно с соответствующим изображением.
-    document.querySelectorAll('.gallery-item').forEach((button) => {
-      button.addEventListener('click', () => {
-        const src = button.dataset.img;
-        const imgEl = button.querySelector('img');
-        const alt = imgEl?.alt || '';
-        openModal(src, alt);
-      });
-    });
-
     modalClose?.addEventListener('click', closeModal);
     modal?.addEventListener('click', (event) => {
       if (event.target === modal) closeModal();
@@ -467,23 +410,6 @@
     window.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && modal?.classList.contains('is-open')) closeModal();
     });
-
-    // Добавляем обработчик для формы обратной связи.  Форма работает
-    // исключительно на стороне клиента: мы предотвращаем отправку,
-    // показываем благодарность и сбрасываем поля.  Это снижает барьер
-    // для обращения, как рекомендуют эксперты по UX, поскольку форма
-    // короткая и понятная【842910821721779†L78-L127】.  Минимальную цену
-    // (1500 ₽/м²) мы вынесли в подпись формы, чтобы посетитель знал
-    // нижний порог стоимости.
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-      contactForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        // Эмуляция отправки: можно заменить на интеграцию с backend или API
-        alert('Спасибо! Мы скоро свяжемся с вами.');
-        contactForm.reset();
-      });
-    }
 
     const contactFab = document.getElementById('contact-fab');
     const contactFabToggle = document.getElementById('contact-fab-toggle');
