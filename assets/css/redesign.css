@@ -1,29 +1,23 @@
 :root {
-  /*
-   * Colour palette updated for a more modern, breathable look.  The dark wood
-   * scheme has been replaced with neutral charcoals and a vibrant turquoise
-   * accent.  Accent variables reuse existing names to avoid major rewrites in
-   * the rest of the stylesheet.  See report for rationale.
-   */
-  --bg: #121315;
-  --bg-soft: #1c1d21;
-  --cream: #ffffff;
-  --cream-2: #f6f6f6;
-  --text: #e0e0e0;
-  --muted: #9da3ab;
-  --wood: #2ec6a3;
-  --wood-2: #4ed9bb;
-  --wood-dark: #0f3f2e;
-  --green: #4caf91;
-  --green-2: #6bd5b5;
-  --gold: #2ec6a3;
-  --gold-2: #4ed9bb;
-  --border: rgba(255, 255, 255, 0.15);
-  --border-strong: rgba(46, 198, 163, 0.45);
-  --glass: rgba(255, 255, 255, 0.05);
-  --glass-strong: rgba(255, 255, 255, 0.10);
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.30);
-  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --bg: #261d17;
+  --bg-soft: #33261f;
+  --cream: #f7ead8;
+  --cream-2: #efe1cd;
+  --text: #f8edde;
+  --muted: #d3c0a1;
+  --wood: #8c6040;
+  --wood-2: #b27b54;
+  --wood-dark: #23150e;
+  --green: #6b4b31;
+  --green-2: #8c6040;
+  --gold: #d6a43a;
+  --gold-2: #e8c16b;
+  --border: rgba(247, 234, 216, 0.16);
+  --border-strong: rgba(214, 164, 58, 0.34);
+  --glass: rgba(247, 234, 216, 0.08);
+  --glass-strong: rgba(247, 234, 216, 0.14);
+  --shadow: 0 30px 80px rgba(0, 0, 0, 0.30);
+  --shadow-soft: 0 16px 42px rgba(0, 0, 0, 0.22);
   --radius-sm: 14px;
   --radius-md: 22px;
   --radius-lg: 32px;
@@ -185,18 +179,6 @@ p { margin: 0; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px; padding: 9px 14px; border: 1px solid rgba(227,184,39,.26); border-radius: 999px; color: var(--gold-2); background: rgba(38,29,23,.56); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); font-size: 12px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
 .eyebrow span { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 18px var(--gold); }
 .hero-text { max-width: 630px; margin-top: 26px; }
-/*
- * Highlight the starting price under the hero text.  The price uses the accent
- * colour and larger font size to draw attention without overwhelming the
- * layout.  It inherits the same font family as headings for consistency.
- */
-.hero-price {
-  margin-top: 18px;
-  color: var(--gold-2);
-  font-family: var(--font-display);
-  font-size: clamp(24px, 3.5vw, 36px);
-  font-weight: 700;
-}
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
 .hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 620px; margin-top: 42px; }
 .hero-stats div { padding: 18px; border: 1px solid var(--border); border-radius: var(--radius-md); background: rgba(255,247,232,.08); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); backdrop-filter: blur(16px); }
@@ -284,72 +266,6 @@ details p { padding: 0 24px 24px; color: var(--muted); }
 .contact-card:hover { transform: translateY(-5px); border-color: var(--border-strong); }
 .contact-card span { color: var(--gold-2); font-size: 11px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
 .contact-card strong { color: var(--cream); font-size: clamp(15px, 1.5vw, 18px); line-height: 1.25; }
-
-/* ---------------------------------------------------------------------
- * Contact form styles
- * A simple, accessible form collects the visitor’s name, phone and a short
- * description of the job. Inputs have clear labels and accessible
- * placeholders.  Focus styles mirror the primary accent colour to guide
- * attention.  The form note includes micro‑copy about data processing and
- * highlights the minimum price.  See report for rationale.
- */
-.contact-form {
-  display: grid;
-  gap: 18px;
-  margin-top: 32px;
-}
-.contact-form .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.contact-form label {
-  color: var(--muted);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-}
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 14px 18px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--cream);
-  font-size: 15px;
-  line-height: 1.4;
-  transition: border-color .28s var(--ease), background .28s var(--ease);
-}
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: var(--muted);
-}
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: var(--gold);
-  background: rgba(255, 255, 255, 0.10);
-}
-.contact-form textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-.contact-form .form-note {
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 8px;
-  line-height: 1.4;
-}
-.contact-form .form-note a {
-  color: var(--gold-2);
-  text-decoration: underline;
-}
-.contact-form .form-note strong {
-  color: var(--gold);
-  font-weight: 700;
-}
 
 .site-footer { border-top: 1px solid rgba(255,247,232,.10); background: rgba(38,29,23,.82); }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 22px; padding: 28px 0; color: var(--muted); font-size: 13px; }
@@ -575,74 +491,6 @@ details p { padding: 0 24px 24px; color: var(--muted); }
 
 /* Disable the bottom CTA bar: the restored right-side floating contact menu is used instead. */
 .mobile-cta { display: none !important; }
-
-/* ---------------------------------------------------------------------
- * Testimonials Section
- * A flexible grid of customer quotes.  Cards use subtle glass effect and
- * emphasised typography to build trust without overwhelming the reader.
- */
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  margin-top: 32px;
-}
-.testimonial-card {
-  padding: 24px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.03);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(8px);
-}
-.testimonial-text {
-  margin: 0;
-  font-size: clamp(16px, 1.6vw, 18px);
-  color: var(--cream-2);
-  line-height: 1.5;
-}
-.testimonial-author {
-  display: block;
-  margin-top: 14px;
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 600;
-}
-
-/* ---------------------------------------------------------------------
- * Gallery grid (Masonry)
- * The legacy gallery has been replaced with a responsive masonry grid.  Images
- * fill their containers and open in a modal on click (handled in JS).  Each
- * item features a subtle border and lift on hover to hint at interactivity.
- */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  grid-auto-rows: 200px;
-  grid-gap: 16px;
-  grid-auto-flow: dense;
-}
-.gallery-item {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.03);
-  box-shadow: var(--shadow-soft);
-  cursor: pointer;
-  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
-}
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.gallery-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-}
 
 @media (max-width: 680px) {
   .legacy-gallery-stage { aspect-ratio: 4 / 3; border-radius: 22px; }
